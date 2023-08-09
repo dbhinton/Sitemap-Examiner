@@ -74,11 +74,9 @@ Before you begin, ensure you have the following installed on your system:
 
 - Consistency and Reliability: A database ensures data consistency and reliability, mitigating potential errors associated with scraping.
 
-## Conclusion
-
 Integrating a database into the Sitemap Examiner system optimizes performance and paves the way for scalability. By minimizing scraping and relying on efficient database querying, the system can effectively handle increased user interactions while providing a smoother user experience.
 
-To scale the system across all sitemap files:
+### To scale the system across all sitemap files:
 1. Fetch and parse each sitemap XML file concurrently.
 2. Combine extracted URLs and SKUs from all sitemaps.
 3. Perform searches across the unified list of URLs and SKUs.
