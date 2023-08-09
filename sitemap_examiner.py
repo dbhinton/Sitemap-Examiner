@@ -1,7 +1,9 @@
-import sys
 import requests
 import bs4
 import xmltodict
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
 
 def extract_sku_from_url(url):
     url_parts = url.split('/')
@@ -63,12 +65,15 @@ def search(sku):
 
     return {'error': 'SKU not found.'}
 
-if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Please provide a SKU as an argument.')
-        sys.exit(1)
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
 
-    sku = sys.argv[1]
-    print(f"Searching for SKU: {sku}")
-    result = search(sku)
-    print(f"Result: {result}")
+@app.route('/search', methods=['POST'])
+def search_sku():
+    sku = request.form.get('sku')
+    product_info = search(sku)
+    return render_template('index.html', product_info=product_info)
+
+if __name__ == '__main__':
+    app.run(debug=True)

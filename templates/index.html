@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Search</title>
+</head>
+<body>
+    <h1>Product Search</h1>
+
+    <form action="/search" method="post">
+        <input type="text" name="sku" placeholder="Enter a sku">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if product_info %}
+        <table>
+            <tr>
+                <th>Title</th>
+                <td>{{ product_info.title }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ product_info.author }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ product_info.price }}</td>
+            </tr>
+        </table>
+    {% else %}
+        <p>No product found for that sku.</p>
+    {% endif %}
+</body>
+</html>
