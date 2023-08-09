@@ -97,9 +97,10 @@ I spent approximately 2.5 hours on this exercise.
 
 If I had more time, I would focus on:
 - Improving error handling and user feedback.
-- Enhancing caching mechanisms for better performance.
+- Integrating a database into the Sitemap Examiner systme instead to relying solely on website scraping.
+- Nicer user interface
 - Implementing proper logging and monitoring.
-- Adding pagination for search results display.
+- Adding autocomplete for matching choices of a search as user is typing
 
 ## Code Critique
 
