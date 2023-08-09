@@ -42,23 +42,23 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Scaling
 
-# Scaling the System Using a Database
+### Scaling the System Using a Database
 
-## Database Setup
+#### Database Setup
 
 1. **Choose a Database System**: Select a suitable database system such as SQLite, MySQL, or PostgreSQL that aligns with your project's requirements and scalability goals.
 
 2. **Design the Database Schema**: Create a database schema to accommodate product information fields such as title, author, price, and SKU. Define tables and their relationships.
 
-3. **Establish Database Connection**: Write code to establish a connection to the chosen database. Use appropriate libraries and settings for your selected database system.
+3. **Establish Database Connection**: Write code to establish a connection to the chosen database. Use appropriate libraries and settings for selected database system.
 
-## Database Population
+#### Database Population
 
-1. **Modify Scraping Code**: Adjust your existing scraping code to extract relevant product information from the website. Ensure you capture attributes like title, author, price, and SKU.
+1. **Modify Scraping Code**: Adjust existing scraping code to extract relevant product information from the website. Ensure you capture attributes like title, author, price, and SKU.
 
 2. **Insert Records into Database**: After extracting the information, insert the collected records into the database. Map scraped data to appropriate database fields for each record.
 
-## API Service Modification
+#### API Service Modification
 
 1. **Query the Database for SKU**: When a search request arrives, query the database to check if the SKU exists. This step helps avoid unnecessary scraping if the information is already available in the database.
 
@@ -66,7 +66,7 @@ Before you begin, ensure you have the following installed on your system:
 
 3. **Return Database Response**: Return the fetched product information as the response to the search request. This eliminates the need to scrape the website for frequently searched SKUs.
 
-## Benefits of Using a Database
+#### Benefits of Using a Database
 
 - Reduced Load on Website: By storing product information in a database, the need for frequent website scraping is minimized, reducing the load on the website's server.
 
@@ -76,7 +76,7 @@ Before you begin, ensure you have the following installed on your system:
 
 Integrating a database into the Sitemap Examiner system optimizes performance and paves the way for scalability. By minimizing scraping and relying on efficient database querying, the system can effectively handle increased user interactions while providing a smoother user experience.
 
-### To scale the system across all sitemap files:
+#### To scale the system across all sitemap files:
 1. Fetch and parse each sitemap XML file concurrently.
 2. Combine extracted URLs and SKUs from all sitemaps.
 3. Perform searches across the unified list of URLs and SKUs.
